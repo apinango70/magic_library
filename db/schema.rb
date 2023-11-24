@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_24_231954) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_24_233928) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,6 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_24_231954) do
     t.text "synopsys"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_books_on_author_id"
   end
 
   create_table "literary_genres", force: :cascade do |t|
@@ -50,4 +52,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_24_231954) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "authors"
 end

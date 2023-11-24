@@ -5,9 +5,20 @@
   </p>
 
   <p>
-    <strong>Availability:</strong>
-    <%= book.availability %>
+    <strong>Author:</strong>
+    <%= book.author.name %>
   </p>
+
+
+  <p>
+    <strong>Availability:</strong>
+    <% if book.availability %>
+      En préstamo
+    <% else %>
+      Disponible
+    <% end %>
+  </p>
+
 
   <p>
     <strong>Synopsys:</strong>

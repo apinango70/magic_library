@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :author_id, style: "display: block" %>
+    <%= form.collection_select :author_id, Author.all, :id, :name, { include_blank: "Select an author" } %>
+  </div>
+
+  <div>
     <%= form.label :availability, style: "display: block" %>
     <%= form.check_box :availability %>
   </div>
