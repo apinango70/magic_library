@@ -1,0 +1,2 @@
+class LiteraryGenre < ApplicationRecord
+end
