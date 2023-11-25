@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, required: true %>
   </div>
 
   <div>
@@ -29,12 +29,12 @@
 
   <div>
     <%= form.label :availability, style: "display: block" %>
-    <%= form.check_box :availability %>
+    <%= form.check_box :availability, required: true %>
   </div>
 
   <div>
     <%= form.label :synopsys, style: "display: block" %>
-    <%= form.text_area :synopsys %>
+    <%= form.text_area :synopsys, required: true %>
   </div>
 
   <div>

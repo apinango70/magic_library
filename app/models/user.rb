@@ -21,6 +21,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Enum de roles
-  enum role: [:user, :library, :admin]
+  enum role: [:user, :librarian, :admin]
 
+  # Validaciones
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end

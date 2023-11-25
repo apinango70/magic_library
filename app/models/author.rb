@@ -11,4 +11,7 @@
 class Author < ApplicationRecord
   # Relaciones y borrado en cascada
   has_many :books, dependent: :destroy
+  #validaciones
+  validates :name, presence: true, uniqueness: true
+
 end

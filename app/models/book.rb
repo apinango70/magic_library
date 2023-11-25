@@ -10,6 +10,12 @@
 #  updated_at   :datetime         not null
 #
 class Book < ApplicationRecord
+  # relaciones
   belongs_to :author
   belongs_to :literary_genre
+
+  #validaciones
+  validates :title, presence: true, uniqueness: true
+  validates :synopsys, presence: true
+
 end
