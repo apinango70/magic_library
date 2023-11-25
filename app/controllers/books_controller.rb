@@ -2,12 +2,16 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
+
   def index
-    @books = Book.all
+    @pagy, @books = pagy(Book.all, items: 10)
   end
 
-  # GET /books/1 or /books/1.json
+
+
   def show
+    @book = Book.find(params[:id])
+    @show_all_fields = true
   end
 
   # GET /books/new
@@ -65,6 +69,11 @@ class BooksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_params
-      params.require(:book).permit(:title, :availability, :synopsys, :author_id, :genre_id)
+      params.require(:book).permit(
+                                    :title,
+                                    :availability,
+                                    :synopsys,
+                                    :author_id,
+                                    :literary_genre_id)
     end
 end

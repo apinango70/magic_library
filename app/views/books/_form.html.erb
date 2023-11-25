@@ -22,6 +22,12 @@
   </div>
 
   <div>
+    <%= form.label :literary_genre_id, style: "display: block" %>
+    <%= form.collection_select :literary_genre_id, LiteraryGenre.all, :id, :name, { include_blank: "Select a literary genre" } %>
+  </div>
+
+
+  <div>
     <%= form.label :availability, style: "display: block" %>
     <%= form.check_box :availability %>
   </div>
@@ -35,3 +41,6 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+

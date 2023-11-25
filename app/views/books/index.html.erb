@@ -9,6 +9,9 @@
       <%= link_to "Show this book", book %>
     </p>
   <% end %>
+  <div class=" d-flex justify-content-center align-items-center">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
 </div>
 
 <%= link_to "New book", new_book_path %>

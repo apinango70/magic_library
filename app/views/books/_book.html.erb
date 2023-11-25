@@ -10,19 +10,32 @@
   </p>
 
 
-  <p>
-    <strong>Availability:</strong>
-    <% if book.availability %>
-      En préstamo
-    <% else %>
-      Disponible
-    <% end %>
-  </p>
 
+  <% if @show_all_fields %>
+    <!-- Estos son los campos que mostrara en la vista show -->
+    <p>
+      <strong>Author information:</strong>
+      <%= book.author.information %>
+    </p>
 
-  <p>
-    <strong>Synopsys:</strong>
-    <%= book.synopsys %>
-  </p>
+    <p>
+      <strong>Literary genre:</strong>
+      <%= book.literary_genre.name %>
+    </p>
 
+    <p>
+      <strong>Availability:</strong>
+      <% if book.availability %>
+        En préstamo
+      <% else %>
+        Disponible
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Synopsys:</strong>
+      <%= book.synopsys %>
+    </p>
+  <% end %>
 </div>
+

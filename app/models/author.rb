@@ -9,5 +9,6 @@
 #  updated_at  :datetime         not null
 #
 class Author < ApplicationRecord
-  has_many :books
+  # Relaciones y borrado en cascada
+  has_many :books, dependent: :destroy
 end
